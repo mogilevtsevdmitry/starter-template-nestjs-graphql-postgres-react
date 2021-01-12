@@ -4,7 +4,15 @@ import {Field, ID, ObjectType} from "@nestjs/graphql";
 @ObjectType({ isAbstract: true })
 export abstract class BaseEntity {
     @Field(type => ID)
-    @PrimaryGeneratedColumn() id: number
+    @PrimaryGeneratedColumn('uuid') id: string
+    /*
+    * Поменяйте колонку уникального ID на закомментируванную строку ниже для создания числового типа
+    * Также внести правки в следующих файлах:
+    * auth.service.ts
+    * jwt-dto.ts
+    * user.resolver.ts
+    * */
+//    @PrimaryGeneratedColumn() id: number
 
     @Field({ nullable: false })
     @Column({ type: 'boolean', default: true }) isActive?: boolean

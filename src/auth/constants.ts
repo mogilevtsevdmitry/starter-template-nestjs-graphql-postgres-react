@@ -1,3 +1,3 @@
 export const jwtConstants = {
-    secret: 'crm-logist-2021',
+    secret: 'secret-key-[$@#^%&]-225544',
 };

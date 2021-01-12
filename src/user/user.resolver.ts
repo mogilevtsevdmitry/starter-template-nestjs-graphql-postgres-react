@@ -14,7 +14,7 @@ export class UserResolver {
                 @Inject('PUB_SUB') private pubSub: PubSubEngine) {
     }
 
-    //@UseGuards(GqlAuthGuard)
+    @UseGuards(GqlAuthGuard)
     @Query(returns => [User])
     async allUsers() {
         return this.userService.getAll()
@@ -22,7 +22,7 @@ export class UserResolver {
 
     @UseGuards(GqlAuthGuard)
     @Query(returns => User)
-    async getUserById(@Args('id', {type: () => ID}) id: number) {
+    async getUserById(@Args('id', {type: () => ID}) id: string /*number*/) {
         return this.userService.getOne(id)
     }
 

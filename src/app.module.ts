@@ -8,11 +8,10 @@ import {AuthModule} from './auth/auth.module';
 @Module({
     imports: [
         GraphQLModule.forRoot({
-            // autoSchemaFile: true,
+            // autoSchemaFile: true,    // расскомментировать для создания схему на лету в памяти (не создается локальнО)
             autoSchemaFile: 'schema.gql',
             sortSchema: true,
             installSubscriptionHandlers: true,
-            // context: ({req}) => req.headers,
             definitions: {
                 emitTypenameField: true,
             },

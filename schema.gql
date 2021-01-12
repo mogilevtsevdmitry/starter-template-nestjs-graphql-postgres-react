@@ -1,0 +1,47 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createUser(user: UserInput!): User!
+  deleteUser(id: ID!): User!
+  login(user: UserInput!): TokenDto!
+  register(user: UserInput!): User!
+  updateUser(user: UserInput!): User!
+}
+
+type Query {
+  allUsers: [User!]!
+  getUserById(id: ID!): User!
+}
+
+type Subscription {
+  subAddNewUser: User!
+}
+
+type TokenDto {
+  access_token: String!
+}
+
+type User {
+  createDateTime: DateTime!
+  createdBy: String
+  email: String!
+  id: ID!
+  internalComment: String
+  isActive: Boolean!
+  isArchived: Boolean!
+  lastChangedBy: String
+  lastChangedDateTime: DateTime!
+  password: String!
+}
+
+input UserInput {
+  email: String!
+  password: String!
+}

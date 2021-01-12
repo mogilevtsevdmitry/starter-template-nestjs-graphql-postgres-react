@@ -19,7 +19,7 @@ export class UserService {
         return await this.repo.save({...user, email, password})
     }
 
-    public async getOne(id: number): Promise<User> {
+    public async getOne(id: string /*number*/): Promise<User> {
         return await this.repo.findOne(id)
     }
 

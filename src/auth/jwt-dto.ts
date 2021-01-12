@@ -5,5 +5,5 @@ export class JwtDto {
     @Field()
     email: string
     @Field(() => ID)
-    userId: number
+    userId: string //number  // string
 }

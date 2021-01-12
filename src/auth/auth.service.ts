@@ -1,8 +1,8 @@
 import {Injectable, NotFoundException} from '@nestjs/common';
 import {JwtService} from "@nestjs/jwt";
+import {JwtDto} from "./jwt-dto";
 import {UserService} from "../user/user.service";
 import {User} from "../user/user.entity";
-import {JwtDto} from "./jwt-dto";
 import {UserInput} from "../user/user.input";
 
 const bcrypt = require('bcrypt')
